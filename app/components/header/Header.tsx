@@ -1,51 +1,61 @@
+import { montserrat, cormorant } from '@/app/layout'; // Ajusta la ruta de importación si es necesario
+import LanguageSelector from './LanguageSelector';
 
 export default function Header() {
+    console.log(LanguageSelector);
     return (
-        <header className="w-full px-10 bg-black text-white sticky z-10">
-            <div className="flex items-center justify-between py-6">
-                <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-amber-600 transition">
-                    Iniciar 
-                </button>
 
+        
+        <header className="w-full px-10 bg-white text-black sticky z-10">
+            <div className="flex items-center justify-between py-6">
+                
+                <LanguageSelector/>
+                
                 <div className="text-center w-full">
-                    <h1 style={{ fontFamily: "CormorantUpright" }} className="text-3xl">
-                    Museo de La Pampa
+                    <h1 className={`text-3xl ${cormorant.className}`}> 
+                        Museo de La Pampa
                     </h1>
                 </div>
 
-                <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-amber-600 transition">
-                    Iniciar 
+                <button className="bg-amber-500 text-white w-46 px-6 py-2 rounded-full hover:bg-amber-600 transition">
+                    Iniciar sesión
                 </button>
-
-
             </div>
 
+            <div className="border-b border-black"></div>
 
-            <div className="border-b border-white"></div>
-
-            <nav style={{ fontFamily: "MontserratAlternates" }} className="flex justify-center gap-6 py-3 text-base ">
+            {/* Aplicamos la clase generada por la fuente Montserrat_Alternates */}
+            <nav className={`flex justify-center gap-6 py-3 text-base ${montserrat.className}`}>
 
                 <a href="#" 
-                className="relative text-white after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
                 Inicio
                 </a>
 
                 <a href="#" 
-                className="relative text-white after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-                Inicio
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                Exhibiciones
                 </a>
+                
+                <a href="#" 
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                Explorar
+                </a>
+                
+                <a href="#" 
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                Noticias
+                </a>
+
+                <div className="border-l border-black"></div>
 
                 <a href="#" 
-                className="relative text-white after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-                Inicio
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                Ver mas
                 </a>
-
-                <div className="h-6 border-l border-white"></div>
-                <a href="#" className="hover:text-blue-500 transition">Ver mas</a>
-
+                
+ 
             </nav>
-
         </header>
     );
-} 
-
+}
