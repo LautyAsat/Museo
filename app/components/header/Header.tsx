@@ -1,7 +1,7 @@
 
 export default function Header() {
     return (
-        <header className="w-full px-10 bg-black text-white">
+        <header className="w-full px-10 bg-black text-white sticky z-10">
             <div className="flex items-center justify-between py-6">
                 <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-amber-600 transition">
                     Iniciar 
