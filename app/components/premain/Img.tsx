@@ -8,7 +8,7 @@ export default function VideoHeader(){
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-screen object-cover"
+        className="top-0 left-0 w-full h-screen object-cover"
     />
     )
 };
