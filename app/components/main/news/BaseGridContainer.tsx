@@ -1,54 +1,49 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import NewsCard from "./NewsCard";
+import { useQuery } from "@tanstack/react-query";
+import { NewsItem } from "@/app/types/newsItem";
 
-export default function(){
+const API_NEWS_URL = "http://localhost:3001/news";
 
-    const [news, setNews] = useState([]);
+export default function () {
+  const query = useQuery({
+    queryKey: ["news"],
+    queryFn: async () => {
+      const response = await fetch(API_NEWS_URL);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    },
+  });
 
-    useEffect(() => {
-        fetch('http://localhost:3001/news')
-        .then(response => response.json())
-        .then(data => {
+  function formatDate(dateString: string): string {
+    const date = new Date(dateString);
 
-            console.log(data);
-        })
-        .catch(error => console.error('Error fetching news:', error));
-    }, []);
+    const formatted = new Intl.DateTimeFormat("es-AR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+    }).format(date);
 
-    return(
-        <div className="grid grid-cols-3 grid-rows-2 gap-4 bg-background px-10   ">
-            <NewsCard
-                className="col-span-2 row-span-1"
-                title="Noticia Grande de Portada"
-                date="25 NOV 2025"
-                summary="Esta es la noticia más importante, por eso ocupa más espacio."
-                imageUrl="./hq720.jpg"
-            />
+    return formatted;
+  }
 
-            <NewsCard
-                className="col-span-1 row-span-2"
-                title="Noticia Grande de Portada"
-                date="25 NOV 2025"
-                summary="Esta es la noticia más importante, por eso ocupa más espacio."
-                imageUrl="./hq720.jpg"
-            />
-            <NewsCard
-                className="col-span-1 row-span-1"
-                title="Noticia Grande de Portada"
-                date="25 NOV 2025"
-                summary="Esta es la noticia más importante, por eso ocupa más espacio."
-                imageUrl="./hq720.jpg"
-            />
-            <NewsCard
-                className="col-span-1 row-span-1"
-                title="Noticia Grande de Portada"
-                date="25 NOV 2025"
-                summary="Esta es la noticia más importante, por eso ocupa más espacio."
-                imageUrl="./hq720.jpg"
-            />
-
-        </div>  
-    );
+  return (
+    <div className="grid grid-cols-3 grid-rows-2 gap-4 bg-background">
+      {query.data?.map((newsItem: NewsItem, index: number) => (
+        <NewsCard
+          key={index}
+          title={newsItem.title}
+          date={formatDate(newsItem.date)}
+          summary={newsItem.content}
+          imageUrl={`http://localhost:3001/${newsItem.image}`}
+          className={
+            index % 4 === 0 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
+          }
+        />
+      ))}
+    </div>
+  );
 }

@@ -19,9 +19,9 @@ const NewsCard = ({
         <figure 
             className={`overflow-hidden bg-white 
                         transition duration-300 shadow-lg hover:shadow-xl
-                        h-full flex flex-col ${className}`}
+                        flex flex-col ${className}`}
         >   
-            <header className="w-full overflow-hidden grow"> 
+            <header className="w-full h-96 overflow-hidden grow"> 
                 <img 
                     className="w-full h-full object-cover
                                transform transition-transform duration-300 ease-in-out 
@@ -38,7 +38,7 @@ const NewsCard = ({
                 <h3 className={`font-bold text-xl mb-3 text-gray-900 leading-snug `}>
                     {title}
                 </h3>
-                <p className={`text-gray-700 text-base mb-4 `}>
+                <p className={`text-gray-700 text-base mb-4 line-clamp-2 `}>
                     {summary}
                 </p>
                 <a 

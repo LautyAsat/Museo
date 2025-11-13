@@ -1,8 +1,16 @@
+"use client";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import { Cormorant_Upright, Montserrat_Alternates } from "next/font/google";
 import { ThemeContextProvider } from "./providers/themeContext";
 import { LanguageContextProvider } from "./providers/languageContext";
 import "./globals.css";
+
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,17 +40,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const queryClient = new QueryClient();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${montserrat.variable} antialiased`}        
         suppressHydrationWarning={true}
       >
-        <ThemeContextProvider>
-          <LanguageContextProvider>
-            {children}
-          </LanguageContextProvider>
-        </ThemeContextProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeContextProvider>
+            <LanguageContextProvider>
+              {children}
+            </LanguageContextProvider>
+          </ThemeContextProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );
