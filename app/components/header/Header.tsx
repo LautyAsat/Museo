@@ -1,12 +1,39 @@
+"use client";
+
 import { montserrat, cormorant } from '@/app/layout'; 
 import LanguageSelector from './LanguageSelector';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
-    console.log(LanguageSelector);
-    return (
 
+    const [hidden, setHidden] = useState(false);
+    const [lastScroll, setLastScroll] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScroll = window.scrollY;
+
+            if(currentScroll <= 0){
+                setHidden(false);
+                setLastScroll(0);
+                return;
+            }
+
+            if(currentScroll > lastScroll && currentScroll > 720) setHidden(true);
+            else if (currentScroll < lastScroll - 20) setHidden(false);
+            
+            setLastScroll(currentScroll);
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScroll])
+
+
+    return (
         
-        <header className="w-full px-10 bg-white text-black sticky z-10">
+        <header className={`w-full px-10 bg-white text-black fixed top-0 left-0 z-10 transition-transform duration-500 ease-in-out ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
             <div className="flex items-center justify-between py-6">
                 
                 <LanguageSelector/>
