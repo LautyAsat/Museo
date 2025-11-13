@@ -1,4 +1,4 @@
-import { montserrat, cormorant } from '@/app/layout'; // Ajusta la ruta de importación si es necesario
+import { montserrat, cormorant } from '@/app/layout'; 
 import LanguageSelector from './LanguageSelector';
 
 export default function Header() {
@@ -17,40 +17,39 @@ export default function Header() {
                     </h1>
                 </div>
 
-                <button className="bg-amber-500 text-white w-46 px-6 py-2 rounded-full hover:bg-amber-600 transition">
+                <button className="border-2 border-solid border-amber-50 bg-amber-500 text-white w-46 px-6 py-2 rounded-full hover:bg-amber-600 transition">
                     Iniciar sesión
                 </button>
             </div>
 
             <div className="border-b border-black"></div>
 
-            {/* Aplicamos la clase generada por la fuente Montserrat_Alternates */}
-            <nav className={`flex justify-center gap-6 py-3 text-base ${montserrat.className}`}>
+                <nav className={`flex justify-center gap-6 py-3 text-base ${montserrat.className}`}>
 
                 <a href="#" 
-                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
                 Inicio
                 </a>
 
                 <a href="#" 
-                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
                 Exhibiciones
                 </a>
                 
                 <a href="#" 
-                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
                 Explorar
                 </a>
                 
                 <a href="#" 
-                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
                 Noticias
                 </a>
 
                 <div className="border-l border-black"></div>
 
                 <a href="#" 
-                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
                 Ver mas
                 </a>
                 
