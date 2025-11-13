@@ -4,8 +4,7 @@ export default function(){
     return(
         <div className="grid grid-cols-3 grid-rows-2 gap-4 bg-white px-10   ">
             <NewsCard
-            colSpan="2" 
-                rowSpan="1" 
+                className="col-span-2 row-span-1"
                 title="Noticia Grande de Portada"
                 date="25 NOV 2025"
                 summary="Esta es la noticia más importante, por eso ocupa más espacio."
@@ -14,24 +13,21 @@ export default function(){
 
 
             <NewsCard
-                colSpan="1" 
-                rowSpan="1" 
+                className="col-span-1 row-span-2"
                 title="Noticia Grande de Portada"
                 date="25 NOV 2025"
                 summary="Esta es la noticia más importante, por eso ocupa más espacio."
                 imageUrl="./hq720.jpg"
             />
             <NewsCard
-                colSpan="1" 
-                rowSpan="1" 
+                className="col-span-1 row-span-1"
                 title="Noticia Grande de Portada"
                 date="25 NOV 2025"
                 summary="Esta es la noticia más importante, por eso ocupa más espacio."
                 imageUrl="./hq720.jpg"
             />
             <NewsCard
-                colSpan="1" 
-                rowSpan="1" 
+                className="col-span-1 row-span-1"
                 title="Noticia Grande de Portada"
                 date="25 NOV 2025"
                 summary="Esta es la noticia más importante, por eso ocupa más espacio."
