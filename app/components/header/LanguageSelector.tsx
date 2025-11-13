@@ -52,7 +52,7 @@ const LanguageSelector: React.FC = () => {
             <div>
                 <button
                     type="button"
-                    className="inline-flex justify-center w-full rounded-md text-black font-medium hover:text-amber-600 focus:outline-none"
+                    className="inline-flex justify-center w-full rounded-md font-medium focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-expanded={isOpen}
                     aria-haspopup="true"

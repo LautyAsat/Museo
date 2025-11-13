@@ -1,17 +1,14 @@
 import Header from "./components/header/Header";
+import NewsSection from "./components/main/news/NewsSection";
 import VideoHeader from "./components/premain/videoHeader";
-import SeparateSection from "./components/section/SeparateSection";
-import BlockContainerHome from "./components/section/BlockContainerHome";
-import BaseGridContainer from "./components/section/BaseGridContainer";
 export default function Home() {
   return (
-    <div className="bg-zinc-50 font-sans dark:bg-black">
+    <div className="bg-background font-sans ">
       <Header/>
       <VideoHeader/>
-      <SeparateSection/>
-      <BlockContainerHome />
-      <BaseGridContainer/>
-      <BlockContainerHome />
+      <main className="mt-10 mb-20 px-4 md:px-10 lg:px-20 max-w-7xl mx-auto">
+        <NewsSection />
+      </main>
     </div>
   );
 }
