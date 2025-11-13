@@ -1,5 +1,5 @@
 import Header from "./components/header/Header";
-import VideoHeader from "./components/premain/Img";
+import VideoHeader from "./components/premain/videoHeader";
 import SeparateSection from "./components/section/SeparateSection";
 import BlockContainerHome from "./components/section/BlockContainerHome";
 import BaseGridContainer from "./components/section/BaseGridContainer";
@@ -9,9 +9,9 @@ export default function Home() {
       <Header/>
       <VideoHeader/>
       <SeparateSection/>
-      <BlockContainerHome name= "Noticias" textColor="black" bgColor="white"/>
+      <BlockContainerHome />
       <BaseGridContainer/>
-      <BlockContainerHome name = "Contenido" textColor="white" bgColor="slate-900"/>
+      <BlockContainerHome />
     </div>
   );
 }

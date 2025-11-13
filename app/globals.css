@@ -28,57 +28,48 @@ body {
 
 @font-face {
   font-family: 'CormorantUpright';
-  src: url('/public/Cormorant_Unicase/CormorantUnicase-Regular.ttf') format('truetype');
-  font-weight: normal;
+  src: url('/fonts/CormorantUnicase-Regular.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'CormorantUpright';
-  src: url('/public/Cormorant_Unicase/CormorantUnicase-Bold.ttf') format('truetype');
-  font-weight: normal;
+  src: url('/fonts/CormorantUnicase-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'CormorantUpright';
-  src: url('/public/Cormorant_Unicase/CormorantUnicase-Light.ttf') format('truetype');
-  font-weight: normal;
+  src: url('/fonts/CormorantUnicase-Light.woff2') format('woff2');
+  font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'CormorantUpright';
-  src: url('/public/Cormorant_Unicase/CormorantUnicase-Medium.ttf') format('truetype');
-  font-weight: normal;
+  src: url('/fonts/CormorantUnicase-Medium.woff2') format('woff2');
+  font-weight: 500s;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'CormorantUpright';
-  src: url('/public/Cormorant_Unicase/CormorantUnicase-SemiBold.ttf') format('truetype');
-  font-weight: normal;
+  src: url('/fonts/CormorantUnicase-SemiBold.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'MontserratAlternates';
-  src: url('/public/Montserrat_Alternates/MontserratAlternates-Bold.ttf') format('truetype');
-  font-weight: normal;
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
-
-@font-face {
-  font-family: 'MontserratAlternates2';
-  src: url('/public/Montserrat_Alternates/MontserratAlternates-Medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MontserratAlternates3';
-  src: url('/public/Montserrat_Alternates/MontserratAlternates-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-

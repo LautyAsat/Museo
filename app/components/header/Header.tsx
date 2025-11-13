@@ -1,6 +1,5 @@
 "use client";
 
-import { montserrat, cormorant } from '@/app/layout'; 
 import LanguageSelector from './LanguageSelector';
 import { useEffect, useState } from 'react';
 
@@ -39,7 +38,7 @@ export default function Header() {
                 <LanguageSelector/>
                 
                 <div className="text-center w-full">
-                    <h1 className={`text-3xl ${cormorant.className}`}> 
+                    <h1 className={`text-5xl font-[CormorantUpright]`}> 
                         Museo de La Pampa
                     </h1>
                 </div>
@@ -51,7 +50,7 @@ export default function Header() {
 
             <div className="border-b border-black"></div>
 
-                <nav className={`flex justify-center gap-6 py-3 text-base ${montserrat.className}`}>
+                <nav className={`flex justify-center gap-6 py-3 text-base font-[montserrat]`}>
 
                 <a href="#" 
                 className="relative text-black after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
