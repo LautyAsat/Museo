@@ -1,8 +1,9 @@
-import Header from "./components/header/Header";
-import CollectionsSection from "./components/main/collections/CollectionsSection";
-import FossilsSection from "./components/main/fossils/FossilsSection";
-import NewsSection from "./components/main/news/NewsSection";
-import VideoHeader from "./components/premain/videoHeader";
+import CollectionsSection from "./features/collections/components/CollectionsSection";
+import FossilsSection from "./features/fossils/components/FossilsSection";
+import NewsSection from "./features/news/components/NewsSection";
+import Header from "./layout/header/Header";
+import VideoHeader from "./layout/premain/videoHeader";
+
 export default function Home() {
   return (
     <div className="bg-background font-sans ">

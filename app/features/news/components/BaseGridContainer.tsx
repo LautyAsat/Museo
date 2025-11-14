@@ -1,8 +1,8 @@
 "use client";
 
+import { NewsItem } from "../types/newsItem";
 import NewsCard from "./NewsCard";
 import { useQuery } from "@tanstack/react-query";
-import { NewsItem } from "@/app/types/newsItem";
 
 const API_NEWS_URL = "http://localhost:3001/news";
 

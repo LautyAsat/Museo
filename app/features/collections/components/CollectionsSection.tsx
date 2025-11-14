@@ -1,5 +1,5 @@
-import Section from "../../common/Section";
-import Subtitle from "../../common/subtitle";
+import Section from "@/app/components/Section";
+import Subtitle from "@/app/components/subtitle";
 
 export default function CollectionsSection() {
   return (
