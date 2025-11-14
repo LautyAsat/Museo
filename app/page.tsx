@@ -1,13 +1,17 @@
 import Header from "./components/header/Header";
+import CollectionsSection from "./components/main/collections/CollectionsSection";
+import FossilsSection from "./components/main/fossils/FossilsSection";
 import NewsSection from "./components/main/news/NewsSection";
 import VideoHeader from "./components/premain/videoHeader";
 export default function Home() {
   return (
     <div className="bg-background font-sans ">
-      <Header/>
-      <VideoHeader/>
+      <Header />
+      <VideoHeader />
       <main className="mt-10 mb-20 px-4 md:px-10 lg:px-20 max-w-[1440px] mx-auto">
         <NewsSection />
+        <CollectionsSection />
+        <FossilsSection />
       </main>
     </div>
   );
