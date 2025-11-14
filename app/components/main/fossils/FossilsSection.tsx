@@ -1,9 +1,10 @@
+import Section from "../../common/Section";
 import Subtitle from "../../common/subtitle";
 
 export default function FossilsSection() {
   return (
-    <section className="spy-4 pt-20">
+    <Section>
       <Subtitle>#FOSILES</Subtitle>
-    </section>
+    </Section>
   );
 }

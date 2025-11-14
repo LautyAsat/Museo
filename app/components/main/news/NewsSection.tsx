@@ -1,11 +1,12 @@
+import Section from "../../common/Section";
 import Subtitle from "../../common/subtitle";
 import BaseGridContainer from "./BaseGridContainer";
 
 export default function NewsSection() {
   return (
-    <section className="spy-4 pt-20">
+    <Section>
       <Subtitle>#ATENCIÓN</Subtitle>
       <BaseGridContainer />
-    </section>
+    </Section>
   );
 }
