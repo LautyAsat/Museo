@@ -6,7 +6,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-background font-sans ">
+    <div className="bg-background">
       <Header />
       <main>{children}</main>
     </div>

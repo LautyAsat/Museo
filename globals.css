@@ -3,6 +3,9 @@
 :root {
   --background: #fcfcfc;
   --header: #e09132;
+  --primary: #e09132;
+  --own-white: #fcfcfc;
+  --own-black: #171717;
   --foreground: #171717;
   --font-Montserrat: 'sans-serif', 'MontserratV', sans-serif;
   --font-CormorantUpright: 'CormorantUpright', serif;
@@ -12,6 +15,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-header: var(--header);
+  --color-primary: var(--primary);
+  --color-own-white: var(--own-white);
+  --color-own-black: var(--own-black);
   --font-montserratv: var(--font-Montserrat);
   --font-cormorant: var(--font-CormorantUpright);
 }

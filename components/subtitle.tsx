@@ -1,14 +1,24 @@
+import { cn } from "@/lib/utils";
+import React from "react";
+
+type Props = Readonly<
+  React.HTMLAttributes<HTMLHeadingElement> & {
+    children: React.ReactNode;
+    className?: string;
+  }
+>;
+
 export default function Subtitle({
   children,
-  classname = "",
+  className = "",
   ...props
-}: Readonly<{
-  children: React.ReactNode;
-  classname?: string;
-}>) {
+}: Props) {
   return (
     <h2
-      className={`text-6xl text-black font-cormorant font-bold mb-6 ${classname}`}
+      className={cn(
+        "text-6xl text-black font-cormorant font-bold mb-6",
+        className
+      )}
       {...props}
     >
       {children}
