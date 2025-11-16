@@ -11,15 +11,17 @@ export default function Checkbox({
 }) {
   return (
     <div
-      className="flex flex-row-reverse gap-x-2"
+      className="flex flex-row-reverse gap-x-2 items-center"
       style={{ justifyContent: "start" }}
     >
-      <label htmlFor={id}>{text}</label>
+      <label htmlFor={id} className="lg:text-lg">
+        {text}
+      </label>
       <input
         type="checkbox"
         name={name}
         id={id}
-        className="size-6 border border-gray-300 appearance-none checked:bg-primary checked:border-own-black"
+        className="size-7 lg:size-8 border border-gray-300 appearance-none checked:bg-primary checked:border-own-black"
         {...props}
       />
     </div>

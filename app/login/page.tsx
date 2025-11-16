@@ -19,8 +19,8 @@ export default function Login() {
 
   return (
     <div className="bg-background min-h-screen flex items-center justify-center">
-      <div className="w-96 shadow-lg py-4 px-4 ">
-        <h1 className="font-cormorant text-4xl text-own-black font-bold">
+      <div className="w-96 lg:w-[500px] shadow-lg py-4 px-4 ">
+        <h1 className="font-cormorant text-4xl lg:text-5xl text-own-black font-bold">
           Inicia Sesión
         </h1>
         <form
@@ -58,14 +58,14 @@ export default function Login() {
         </form>
 
         <Link href="/forgot-password">
-          <p className="mb-2 my-6 text-center font-montserratv text-sm text-gray-500">
+          <p className="mb-2 my-6 text-center font-montserratv text-sm lg:text-base text-gray-500">
             ¿Olvidaste tu contraseña?
           </p>
         </Link>
 
         <Separator />
 
-        <Subtitle className="text-xl text-own-black opacity-80">
+        <Subtitle className="text-xl lg:text-2xl text-own-black opacity-80">
           ¿No tienes una cuenta?
         </Subtitle>
 

@@ -16,7 +16,7 @@ export default function Button({
       className={cn(
         `${
           isPrimary ? "bg-primary" : "bg-own-white"
-        } text-own-white text-xl font-bold font-cormorant py-2 rounded cursor-pointer`,
+        } text-own-white text-xl font-bold font-cormorant py-2 rounded cursor-pointer lg:text-2xl`,
         className
       )}
       {...props}

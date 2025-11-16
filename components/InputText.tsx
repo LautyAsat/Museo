@@ -19,7 +19,7 @@ export default function InputText({
 }) {
   return (
     <div className="flex flex-col">
-      <label htmlFor={id}>
+      <label htmlFor={id} className="lg:text-lg">
         {text}
         <span className="text-red-500">{isRequired && " *"}</span>
       </label>
@@ -30,7 +30,7 @@ export default function InputText({
         required={isRequired}
         defaultValue={defaultValue}
         autoComplete={autoComplete}
-        className="border border-gray-300 mt-2"
+        className="border border-gray-300 mt-2 lg:py-2 lg:px-3 px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary"
         {...props}
       />
     </div>
