@@ -1,6 +1,6 @@
-import Subtitle from "@/app/components/subtitle";
+import Subtitle from "@/src/components/subtitle";
 import BaseGridContainer from "./BaseGridContainer";
-import Section from "@/app/components/Section";
+import Section from "@/src/components/Section";
 
 export default function NewsSection() {
   return (

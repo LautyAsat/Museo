@@ -1,13 +1,15 @@
+import { cn } from "../lib/utils";
+
 export default function Section({
   children,
-  classname,
+  className,
   ...props
 }: {
   children: React.ReactNode;
-  classname?: string;
+  className?: string;
 }) {
   return (
-    <section className={`spy-4 pt-20 ${classname}`} {...props}>
+    <section className={cn("w-full pt-20", className)} {...props}>
       {children}
     </section>
   );

@@ -1,0 +1,24 @@
+import CollectionsSection from "../features/collections/components/CollectionsSection";
+import FossilsSection from "../features/fossils/components/FossilsSection";
+import NewsSection from "../features/news/components/NewsSection";
+import ReelsSection from "../features/reels/components/ReelsSection";
+import VideoHeader from "../components/premain/videoHeader";
+import MainLayout from "../layouts/MainLayout";
+
+export default function Page() {
+  return (
+    <MainLayout>
+      <VideoHeader />
+      <main className="mt-10 mb-20">
+        <div className="px-4 md:px-10 lg:px-20 max-w-[1440px] mx-auto">
+          <NewsSection />
+        </div>
+        <div className="bg-[#181818] px-4 md:px-10 lg:px-20 w-full">
+          <ReelsSection />
+        </div>
+        <CollectionsSection />
+        <FossilsSection />
+      </main>
+    </MainLayout>
+  );
+}
