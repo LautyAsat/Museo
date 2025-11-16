@@ -1,6 +1,6 @@
 "use client";
 
-import Section from "@/src/components/Section";
+import Section from "@/components/Section";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";

@@ -1,8 +1,8 @@
+import VideoHeader from "../layout/premain/videoHeader";
 import CollectionsSection from "../features/collections/components/CollectionsSection";
 import FossilsSection from "../features/fossils/components/FossilsSection";
 import NewsSection from "../features/news/components/NewsSection";
 import ReelsSection from "../features/reels/components/ReelsSection";
-import VideoHeader from "../components/premain/videoHeader";
 import MainLayout from "../layouts/MainLayout";
 
 export default function Page() {
