@@ -3,10 +3,12 @@
 import Link from "next/link";
 import LanguageSelector from "./LanguageSelector";
 import { useEffect, useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Header() {
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
+  const { user, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,12 +46,21 @@ export default function Header() {
           </h1>
         </div>
 
-        <Link
-          href="/login"
-          className="border border-solid border-gray-50 bg-white text-black w-46 px-6 py-2 rounded-full"
-        >
-          Iniciar sesión
-        </Link>
+        {user ? (
+          <button
+            onClick={logout}
+            className="border border-own-black bg-white text-own-black w-46 px-6 text-center py-2 cursor-pointer rounded-lg"
+          >
+            Cerrar sesión
+          </button>
+        ) : (
+          <Link
+            href="/login"
+            className="border border-solid border-gray-50 bg-white text-center text-own-black w-46 px-6 py-2 rounded-lg"
+          >
+            Iniciar sesión
+          </Link>
+        )}
       </div>
 
       <div className="border-b border-white"></div>

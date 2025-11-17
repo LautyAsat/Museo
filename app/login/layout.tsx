@@ -1,3 +1,4 @@
+import { UserPayload } from "@/types/UserPayload";
 import { jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -17,7 +18,7 @@ export default async function Layout({
 
   try {
     const secret = new TextEncoder().encode(process.env.JWT_SECRET_KEY);
-    const { payload } = await jwtVerify(tokenCookie.value, secret);
+    const { payload } = await jwtVerify<UserPayload>(tokenCookie.value, secret);
 
     payloadResponse = payload;
   } catch (error) {

@@ -4,14 +4,30 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import { ThemeContextProvider } from "@/providers/themeContext";
 import { LanguageContextProvider } from "@/providers/languageContext";
+import { AuthProvider } from "./AuthContext";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+interface UserPayload {
+  email: string;
+  role: string;
+}
+
+export default function Providers({
+  initialUser,
+  children,
+}: {
+  initialUser: UserPayload | null;
+  children: React.ReactNode;
+}) {
   const [queryClient] = useState(() => new QueryClient());
+
+  console.log("Initial user in Providers:", initialUser);
 
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeContextProvider>
-        <LanguageContextProvider>{children}</LanguageContextProvider>
+        <AuthProvider initialUser={initialUser}>
+          <LanguageContextProvider>{children}</LanguageContextProvider>
+        </AuthProvider>
       </ThemeContextProvider>
     </QueryClientProvider>
   );

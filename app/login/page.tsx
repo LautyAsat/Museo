@@ -20,8 +20,14 @@ export default function Login() {
   const [state, formAction] = useActionState(handleLogin, initialState);
 
   useEffect(() => {
-    if (state.message === null && state.email !== "") {
-      router.push("/dashboard");
+    if (state.success) {
+      router.refresh();
+
+      if (state.role === "admin") {
+        router.push("/dashboard");
+      } else {
+        router.push("/");
+      }
     }
   }, [state, router]);
 
