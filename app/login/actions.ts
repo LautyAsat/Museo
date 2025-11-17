@@ -1,7 +1,6 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 export type State = {
   message: string | null;
@@ -33,10 +32,10 @@ export async function handleLogin(prevState: State, formData: FormData) : Promis
 
     (await cookies()).set("session_token", String(access_token), { httpOnly: true });
 
+    return { message: null, email };
   }
   catch (error) {
     return { message: "Error al iniciar sesión", email };
   }
 
-  redirect("/dashboard");
 }

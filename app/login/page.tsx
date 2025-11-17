@@ -7,7 +7,8 @@ import Separator from "@/components/Separator";
 import Subtitle from "@/components/subtitle";
 import Link from "next/link";
 import { handleLogin, State } from "./actions";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const initialState: State = {
   message: null,
@@ -15,7 +16,14 @@ const initialState: State = {
 };
 
 export default function Login() {
+  const router = useRouter();
   const [state, formAction] = useActionState(handleLogin, initialState);
+
+  useEffect(() => {
+    if (state.message === null && state.email !== "") {
+      router.push("/dashboard");
+    }
+  }, [state, router]);
 
   return (
     <div className="bg-background min-h-screen flex items-center justify-center">

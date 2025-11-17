@@ -1,23 +1,13 @@
-"use client";
-
 import "../globals.css";
-import { LanguageContextProvider } from "@/providers/languageContext";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeContextProvider } from "@/providers/themeContext";
+import Providers from "@/providers/Providers";
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const queryClient = new QueryClient();
-
   return (
-    <html lang="en">
+    <html lang="es">
       <body suppressHydrationWarning={true}>
-        <QueryClientProvider client={queryClient}>
-          <ThemeContextProvider>
-            <LanguageContextProvider>{children}</LanguageContextProvider>
-          </ThemeContextProvider>
-        </QueryClientProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
