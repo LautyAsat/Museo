@@ -6,6 +6,7 @@
   --primary: #e09132;
   --own-white: #fcfcfc;
   --own-black: #171717;
+  --own-light-black: #2c2c2cf3;
   --foreground: #171717;
   --font-Montserrat: 'sans-serif', 'MontserratV', sans-serif;
   --font-CormorantUpright: 'CormorantUpright', serif;
@@ -18,6 +19,7 @@
   --color-primary: var(--primary);
   --color-own-white: var(--own-white);
   --color-own-black: var(--own-black);
+  --color-own-light-black: var(--own-light-black);
   --font-montserratv: var(--font-Montserrat);
   --font-cormorant: var(--font-CormorantUpright);
 }

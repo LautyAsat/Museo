@@ -16,7 +16,11 @@ export default function Page() {
         <div className="bg-[#181818] px-4 md:px-10 lg:px-20 w-full">
           <ReelsSection />
         </div>
-        <CollectionsSection />
+        <div className="bg-[#181818] px-4 md:px-10 lg:px-20 w-full">
+          <div className="max-w-[1440px] mx-auto">
+            <CollectionsSection />
+          </div>
+        </div>
         <FossilsSection />
       </main>
     </MainLayout>
