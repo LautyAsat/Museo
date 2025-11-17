@@ -31,7 +31,7 @@ export default function () {
   }
 
   return (
-    <div className="grid grid-cols-3 grid-rows-2 gap-4 bg-background">
+    <div className="grid grid-cols-3 grid-rows-2 lg:max-h-[900px] 2xl:max-h-[1200px] gap-4 bg-background">
       {query.data?.map((newsItem: NewsItem, index: number) => (
         <NewsCard
           key={index}
