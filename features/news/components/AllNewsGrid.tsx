@@ -1,16 +1,16 @@
 "use client";
 
-import { Suspense } from "react";
-import { NewsItem } from "../types/newsItem";
-import NewsCard from "./NewsCard";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import NewsGridSkeleton from "./NewsGridSkeleton";
+import NewsCard from "./NewsCard";
 import { createSlug, formatDate } from "@/utils/utils";
-import { API_ENDPOINTS } from "@/utils/constants";
+import { NewsItem } from "../types/newsItem";
+import { Suspense } from "react";
+import AllNewsGridSkeleton from "./AllNewsGridSkeleton";
+import { API_ENDPOINTS, BASE_API_URL } from "@/utils/constants";
 
-const API_NEWS_URL = API_ENDPOINTS.TOP_NEWS;
+const API_NEWS_URL = API_ENDPOINTS.NEWS;
 
-function BaseGridContent() {
+function AllNewsGridContent() {
   const query = useSuspenseQuery({
     queryKey: ["news"],
     queryFn: async () => {
@@ -23,17 +23,15 @@ function BaseGridContent() {
   });
 
   return (
-    <div className="grid grid-cols-3 grid-rows-2 lg:max-h-[900px] 2xl:max-h-[1200px] gap-4 bg-background">
+    <div className="grid grid-cols-3 auto-rows-[24rem] gap-4 bg-background">
       {query.data?.map((newsItem: NewsItem, index: number) => (
         <NewsCard
           key={index}
           title={newsItem.title}
           date={formatDate(newsItem.date)}
           summary={newsItem.content}
-          imageUrl={`http://localhost:3001/${newsItem.image}`}
-          className={
-            index % 4 === 0 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
-          }
+          imageUrl={`${BASE_API_URL}/${newsItem.image}`}
+          className={"col-span-1 row-span-1"}
           slug={createSlug(newsItem.title, newsItem._id)}
         />
       ))}
@@ -41,10 +39,10 @@ function BaseGridContent() {
   );
 }
 
-export default function BaseGridContainer() {
+export default function AllNewsGrid() {
   return (
-    <Suspense fallback={<NewsGridSkeleton />}>
-      <BaseGridContent />
+    <Suspense fallback={<AllNewsGridSkeleton />}>
+      <AllNewsGridContent />
     </Suspense>
   );
 }
