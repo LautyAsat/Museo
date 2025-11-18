@@ -1,11 +1,6 @@
+import { Image } from "@/features/collections/types/Species";
 
-export interface Image {
-  url: string;
-  isFront: boolean;
-  _id: string;
-}
-
-export interface Specie {
+export interface Fossil {
   _id: string;
   name: string;
   description: string;

@@ -5,8 +5,8 @@ import Paragraph from "@/components/Paragraph";
 import Section from "@/components/Section";
 import Subtitle from "@/components/subtitle";
 
-import { Specie } from "@/features/collections/types/Species";
 import { useQuery } from "@tanstack/react-query";
+import { Fossil } from "../types/Fossil";
 
 const API_BASE_URL = "http://localhost:3001";
 const API_FOSSILS_URL = "http://localhost:3001/fossils";
@@ -32,7 +32,7 @@ export default function FossilsSection() {
   }
 
   const accordionItems: AccordionItem[] = data
-    ? data.map((fossil: Specie) => {
+    ? data.map((fossil: Fossil) => {
         const frontImage =
           fossil.images.find((img) => img.isFront)?.url ||
           `${API_BASE_URL}/uploads/not-found.png`;
