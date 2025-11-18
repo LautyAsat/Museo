@@ -30,6 +30,13 @@ export default function () {
     return formatted;
   }
 
+  function createSlug(title: string, id: string): string {
+    return `${title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")}--nid-${id}`;
+  }
+
   return (
     <div className="grid grid-cols-3 grid-rows-2 lg:max-h-[900px] 2xl:max-h-[1200px] gap-4 bg-background">
       {query.data?.map((newsItem: NewsItem, index: number) => (
@@ -42,6 +49,7 @@ export default function () {
           className={
             index % 4 === 0 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
           }
+          slug={createSlug(newsItem.title, newsItem._id)}
         />
       ))}
     </div>
