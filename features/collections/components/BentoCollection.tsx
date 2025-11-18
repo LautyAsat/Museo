@@ -3,8 +3,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { Specie } from "../types/Species";
 import BentoCardImage from "./BentoCardImage";
+import { API_ENDPOINTS } from "@/utils/constants";
 
-const API_COLLECTIONS_URL = "http://localhost:3001/collections";
+const API_COLLECTIONS_URL = API_ENDPOINTS.COLLECTIONS;
 const BENTO_ORDER = [
   "col-span-1 row-span-3",
   "col-span-1 row-span-2",

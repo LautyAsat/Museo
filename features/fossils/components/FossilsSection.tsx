@@ -7,9 +7,9 @@ import Subtitle from "@/components/subtitle";
 
 import { useQuery } from "@tanstack/react-query";
 import { Fossil } from "../types/Fossil";
+import { API_ENDPOINTS, BASE_API_URL } from "@/utils/constants";
 
-const API_BASE_URL = "http://localhost:3001";
-const API_FOSSILS_URL = "http://localhost:3001/fossils";
+const API_FOSSILS_URL = API_ENDPOINTS.FOSSILS;
 
 export default function FossilsSection() {
   const { data, isLoading, isError } = useQuery({
@@ -35,12 +35,12 @@ export default function FossilsSection() {
     ? data.map((fossil: Fossil) => {
         const frontImage =
           fossil.images.find((img) => img.isFront)?.url ||
-          `${API_BASE_URL}/uploads/not-found.png`;
+          `${BASE_API_URL}/uploads/not-found.png`;
 
         return {
           id: fossil._id,
           title: fossil.name,
-          imageSrc: `${API_BASE_URL}/${frontImage}`,
+          imageSrc: `${BASE_API_URL}/${frontImage}`,
         };
       })
     : [];
