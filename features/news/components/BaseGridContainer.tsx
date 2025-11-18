@@ -1,12 +1,14 @@
 "use client";
 
+import { Suspense } from "react";
 import { NewsItem } from "../types/newsItem";
 import NewsCard from "./NewsCard";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import NewsGridSkeleton from "./NewsGridSkeleton";
 
 const API_NEWS_URL = "http://localhost:3001/news";
 
-export default function BaseGridContainer() {
+function BaseGridContent() {
   const query = useSuspenseQuery({
     queryKey: ["news"],
     queryFn: async () => {
@@ -53,5 +55,13 @@ export default function BaseGridContainer() {
         />
       ))}
     </div>
+  );
+}
+
+export default function BaseGridContainer() {
+  return (
+    <Suspense fallback={<NewsGridSkeleton />}>
+      <BaseGridContent />
+    </Suspense>
   );
 }
