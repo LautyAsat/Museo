@@ -5,17 +5,18 @@ import Subtitle from "@/components/subtitle";
 import Link from "next/link";
 import BentoCollection from "./BentoCollection";
 import Button from "@/components/Button";
+import Paragraph from "@/components/Paragraph";
 
 export default function CollectionsSection() {
   return (
-    <Section className="pb-36">
+    <Section className="">
       <Subtitle className="text-own-white">
         #SUMERGETÉ EN NUESTRA ASOMBROSA COLECCIÓN
       </Subtitle>
-      <p className="mt-4 text-lg md:text-2xl text-own-white opacity-90 font-montserratv ">
+      <Paragraph className="text-own-white">
         Por años hemos reunido piezas únicas que cuentan la historia de nuestra
         región.
-      </p>
+      </Paragraph>
       <div className="relative">
         <BentoCollection />
         <div className="absolute h-[400px] w-full bg-linear-to-b from-transparent via-own-light-black to-own-black bottom-0 left-0"></div>
