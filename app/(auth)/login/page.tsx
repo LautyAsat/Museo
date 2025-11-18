@@ -83,7 +83,7 @@ export default function Login() {
           ¿No tienes una cuenta?
         </Subtitle>
 
-        <Link href="/register">
+        <Link href="/registro">
           <Button
             isPrimary={false}
             className="mt-0 text-lg w-fit border-own-black text-own-black border px-4 py-1"

@@ -1,6 +1,6 @@
 "use client";
 
-import { logoutAction } from "@/app/login/actions";
+import { logoutAction } from "@/app/(auth)/login/actions";
 import { useRouter } from "next/navigation";
 import { createContext, useState, useEffect } from "react";
 
