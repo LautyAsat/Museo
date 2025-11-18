@@ -2,12 +2,12 @@
 
 import { NewsItem } from "../types/newsItem";
 import NewsCard from "./NewsCard";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 
 const API_NEWS_URL = "http://localhost:3001/news";
 
-export default function () {
-  const query = useQuery({
+export default function BaseGridContainer() {
+  const query = useSuspenseQuery({
     queryKey: ["news"],
     queryFn: async () => {
       const response = await fetch(API_NEWS_URL);
