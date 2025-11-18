@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full px-10 bg-header text-white fixed top-0 left-0 z-10 transition-transform duration-500 ease-in-out ${
+      className={`w-full px-10 bg-header text-white sticky top-0 left-0 z-10 transition-transform duration-500 ease-in-out ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
@@ -68,42 +68,42 @@ export default function Header() {
       <nav
         className={`flex justify-center gap-6 py-3 text-base font-montserratv`}
       >
-        <a
-          href="#"
+        <Link
+          href="/"
           className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
         >
           Inicio
-        </a>
+        </Link>
 
-        <a
-          href="#"
+        <Link
+          href="/fosiles"
           className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
         >
-          Exhibiciones
-        </a>
+          Fosiles
+        </Link>
 
-        <a
-          href="#"
+        <Link
+          href="/colecciones"
           className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
         >
-          Explorar
-        </a>
+          Colecciones
+        </Link>
 
-        <a
-          href="#"
+        <Link
+          href="/noticias"
           className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
         >
           Noticias
-        </a>
+        </Link>
 
         <div className="border-l border-white"></div>
 
-        <a
-          href="#"
+        <Link
+          href="/reservas"
           className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
         >
-          Ver mas
-        </a>
+          Reserva tu entrada
+        </Link>
       </nav>
     </header>
   );
