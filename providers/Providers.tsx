@@ -20,8 +20,6 @@ export default function Providers({
 }) {
   const [queryClient] = useState(() => new QueryClient());
 
-  console.log("Initial user in Providers:", initialUser);
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeContextProvider>
