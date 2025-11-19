@@ -38,7 +38,7 @@ export default function Header() {
     <>
       <HamburguerMenu />
       <header
-        className={`w-full px-4 md:px-10 bg-header text-white sticky top-0 left-0 z-10 transition-transform duration-500 ease-in-out ${
+        className={`w-full px-4 md:px-10 bg-header text-white sticky z-50 top-0 left-0 transition-transform duration-500 ease-in-out ${
           hidden ? "-translate-y-full" : "translate-y-0"
         }`}
       >
@@ -83,13 +83,6 @@ export default function Header() {
             className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
           >
             Inicio
-          </Link>
-
-          <Link
-            href="/fosiles"
-            className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Fosiles
           </Link>
 
           <Link
