@@ -4,11 +4,13 @@ export default function Button({
   children,
   className,
   isPrimary = true,
+  disabled = false,
   ...props
 }: {
   children: React.ReactNode;
   className?: string;
   isPrimary?: boolean;
+  disabled?: boolean;
 }) {
   return (
     <button

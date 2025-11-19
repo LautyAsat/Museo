@@ -8,14 +8,16 @@ import Comments from "@/features/news/components/Comments";
 import CommentsForm from "@/features/news/components/CommentsForm";
 import NewsAside from "@/features/news/components/NewsAside";
 import { NewsItem } from "@/features/news/types/newsItem";
+import { useAuth } from "@/hooks/useAuth";
 import { API_ENDPOINTS, BASE_API_URL } from "@/utils/constants";
-import { createSlug, formatDate } from "@/utils/utils";
+import { formatDate } from "@/utils/utils";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
 export default function page() {
   const { slug }: { slug: string } = useParams();
+  const { user } = useAuth();
   const id = slug.split("nid-")[1];
 
   const { data }: { data: NewsItem } = useSuspenseQuery({
@@ -80,7 +82,20 @@ export default function page() {
 
         <Paragraph className="mb-4">Deja tu opinión de la noticia</Paragraph>
 
-        <CommentsForm />
+        {user ? (
+          <CommentsForm newsId={data._id} path={slug} />
+        ) : (
+          <div className="flex">
+            <div className="bg-gray-100 p-4 rounded-md">
+              <Paragraph className="mt-0">
+                Debes iniciar sesión para comentar.
+              </Paragraph>
+            </div>
+            <Link href="/login">
+              <Button className="px-8 py-4 ml-4">Inicia sesión</Button>
+            </Link>
+          </div>
+        )}
 
         <Separator />
 
