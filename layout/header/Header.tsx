@@ -70,28 +70,28 @@ export default function Header() {
       >
         <Link
           href="/"
-          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
         >
           Inicio
         </Link>
 
         <Link
           href="/fosiles"
-          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
         >
           Fosiles
         </Link>
 
         <Link
           href="/colecciones"
-          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
         >
           Colecciones
         </Link>
 
         <Link
           href="/noticias"
-          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
         >
           Noticias
         </Link>
@@ -100,7 +100,7 @@ export default function Header() {
 
         <Link
           href="/reservas"
-          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+          className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
         >
           Reserva tu entrada
         </Link>
