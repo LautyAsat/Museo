@@ -23,6 +23,8 @@ interface filterType {
   name?: string;
 }
 
+type SpecieWithType = Specie & { type: "collection" | "fossil" };
+
 function CollectionsContent() {
   const [filter, setFilter] = useState<filterType>({ name: "" });
 
@@ -39,10 +41,27 @@ function CollectionsContent() {
     ],
   });
 
-  const collectionsWithFossilsFiltered = useMemo<Specie[]>(() => {
+  const collectionsWithFossilsFiltered = useMemo<SpecieWithType[]>(() => {
     const collections = collectionsQuery.data;
     const fossils = fossilsQuery.data;
-    const collectionsWithFossils: Specie[] = [...collections, ...fossils];
+
+    const safeCollections = Array.isArray(collections) ? collections : [];
+    const safeFossils = Array.isArray(fossils) ? fossils : [];
+
+    const mappedCollections = safeCollections.map((item: Specie) => ({
+      ...item,
+      type: "collection" as const,
+    }));
+
+    const mappedFossils = safeFossils.map((item: Specie) => ({
+      ...item,
+      type: "fossil" as const,
+    }));
+
+    const collectionsWithFossils: SpecieWithType[] = [
+      ...mappedCollections,
+      ...mappedFossils,
+    ];
 
     console.log("Cambiando HARD");
 
@@ -77,28 +96,30 @@ function CollectionsContent() {
       </Paragraph>
 
       <Section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 grid-rows-auto-[200px] grid-flow-dense">
-        {collectionsWithFossilsFiltered.map((specie: Specie, index: number) => {
-          const frontImage = specie.images.find((image) => image.isFront);
+        {collectionsWithFossilsFiltered.map(
+          (specie: SpecieWithType, index: number) => {
+            const frontImage = specie.images.find((image) => image.isFront);
 
-          return (
-            <Link
-              key={specie._id}
-              href={`/colecciones/${specie.name}`}
-              className={`${
-                BENTO_ORDER[index % BENTO_ORDER.length]
-              } relative cursor-pointer overflow-hidden`}
-            >
-              <BentoCardImage
-                frontImage={frontImage?.url || "uploads/not-found.png"}
-                specie={specie}
-              />
-              <div className="absolute w-full h-full top-0 left-0 bg-linear-to-b transition-colors duration-300 ease-out from-transparent via-own-trasparent to-own-black flex items-end justify-center"></div>
-              <h5 className="absolute h-fit w-full z-10 bottom-1/6 text-center font-cormorant text-own-white text-4xl font-bold pointer-events-none">
-                {specie.name}
-              </h5>
-            </Link>
-          );
-        })}
+            return (
+              <Link
+                key={specie._id}
+                href={`/colecciones/${specie.name}?type=${specie.type}`}
+                className={`${
+                  BENTO_ORDER[index % BENTO_ORDER.length]
+                } relative cursor-pointer overflow-hidden`}
+              >
+                <BentoCardImage
+                  frontImage={frontImage?.url || "uploads/not-found.png"}
+                  specie={specie}
+                />
+                <div className="absolute w-full h-full top-0 left-0 bg-linear-to-b transition-colors duration-300 ease-out from-transparent via-own-trasparent to-own-black flex items-end justify-center"></div>
+                <h5 className="absolute h-fit w-full z-10 bottom-1/6 text-center font-cormorant text-own-white text-4xl font-bold pointer-events-none">
+                  {specie.name}
+                </h5>
+              </Link>
+            );
+          }
+        )}
       </Section>
     </main>
   );
