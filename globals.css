@@ -7,6 +7,9 @@
   --own-white: #fcfcfc;
   --own-black: #171717;
   --own-light-black: #2c2c2cf3;
+  --own-dark-gray: #364153;
+  --own-light-gray: #6a7282;
+  --own-extra-light-gray: #f3f4f6;
   --foreground: #171717;
   --font-Montserrat: 'sans-serif', 'MontserratV', sans-serif;
   --font-CormorantUpright: 'CormorantUpright', serif;
@@ -20,6 +23,9 @@
   --color-own-white: var(--own-white);
   --color-own-black: var(--own-black);
   --color-own-light-black: var(--own-light-black);
+  --color-own-dark-gray: var(--own-dark-gray);
+  --color-own-light-gray: var(--own-light-gray);
+  --color-own-extra-light-gray: var(--own-extra-light-gray);
   --font-montserratv: var(--font-Montserrat);
   --font-cormorant: var(--font-CormorantUpright);
 }
@@ -28,8 +34,29 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --header: #e09132;
+    --primary: #e09132;
+    --own-white: #171717; 
+    --own-black: #fcfcfc; 
+    --own-light-black: #d4d4d4; 
+    --own-dark-gray: #b0b0b0;
+    --own-light-gray: #c2c2c2;
+    --own-extra-light-gray: #424242;
   }
 } */
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --header: #e09132;
+  --primary: #e09132;
+  --own-white: #171717; 
+  --own-black: #fcfcfc; 
+  --own-light-black: #d4d4d4;
+  --own-dark-gray: #b0b0b0;
+  --own-light-gray: #c2c2c2;
+  --own-extra-light-gray: #424242;
+}
 
 body {
   background: var(--background);

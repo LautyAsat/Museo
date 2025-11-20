@@ -63,8 +63,6 @@ function CollectionsContent() {
       ...mappedFossils,
     ];
 
-    console.log("Cambiando HARD");
-
     if (!filter.name || filter.name.trim() === "") {
       return collectionsWithFossils;
     }
@@ -77,13 +75,13 @@ function CollectionsContent() {
   console.log(filter.name);
 
   return (
-    <main className="mt-12 px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto bg-own-white">
+    <main className="mt-12 px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto">
       <Subtitle>Explora por toda nuestra colección</Subtitle>
       <Paragraph className="mb-4">Filtra por nombre:</Paragraph>
       <input
         id="name"
         name="name"
-        className="block px-4 py-6 bg-gray-100 w-full text-xl font-montserratv focus:outline-none "
+        className="block px-4 py-6 bg-own-extra-light-gray w-full text-xl font-montserratv focus:outline-none "
         value={filter.name}
         onChange={(e) => {
           console.log(filter.name);
@@ -91,7 +89,7 @@ function CollectionsContent() {
         }}
         placeholder="Golondrina Negra..."
       />
-      <Paragraph className="my-4 xl:text-xl text-gray-500">
+      <Paragraph className="my-4 xl:text-xl text-own-light-black">
         Resultados encontrados: {collectionsWithFossilsFiltered.length}
       </Paragraph>
 
@@ -133,14 +131,10 @@ function LoadingFallback() {
   );
 }
 
-// 3. COMPONENTE PRINCIPAL (Page)
-// Su única misión es atrapar la promesa con Suspense para que React no muera.
 export default function Page() {
   return (
-    <main className="mt-12 px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto bg-own-white">
-      <Suspense fallback={<LoadingFallback />}>
-        <CollectionsContent />
-      </Suspense>
-    </main>
+    <Suspense fallback={<LoadingFallback />}>
+      <CollectionsContent />
+    </Suspense>
   );
 }

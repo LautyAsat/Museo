@@ -13,6 +13,22 @@ export default function Header() {
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
   const { user, logout } = useAuth();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const userPrefersDark =
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    if (userPrefersDark) {
+      document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setIsDarkMode(false);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +51,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
 
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+      setIsDarkMode(true);
+    }
+  };
+
   return (
     <>
       <HamburguerMenu
@@ -48,9 +76,13 @@ export default function Header() {
       >
         <div className="flex items-center justify-between py-6">
           <div className="w-46 flex flex-start items-center">
-            <div className="hidden md:block bg-own-white p-2 rounded-md cursor-pointer">
+            <button
+              onClick={toggleTheme}
+              aria-label="Cambiar tema"
+              className="hidden md:block bg-white p-2 rounded-md cursor-pointer"
+            >
               <DarkModeIcon className="size-8" />
-            </div>
+            </button>
           </div>
 
           <div className="flex justify-between md:block text-center w-full">
@@ -69,14 +101,14 @@ export default function Header() {
           {user ? (
             <button
               onClick={logout}
-              className="hidden md:block border border-own-black bg-white text-own-black w-46 px-6 text-center py-2 cursor-pointer rounded-lg"
+              className="hidden md:block border border-own-black bg-white text-black w-46 px-6 text-center py-2 cursor-pointer rounded-lg"
             >
               Cerrar sesión
             </button>
           ) : (
             <Link
               href="/login"
-              className="hidden md:block border border-solid border-gray-50 bg-white text-center text-own-black w-46 px-6 py-2 rounded-lg"
+              className="hidden md:block border border-solid border-gray-50 bg-white text-center text-black w-46 px-6 py-2 rounded-lg"
             >
               Iniciar sesión
             </Link>

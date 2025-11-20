@@ -16,7 +16,7 @@ export default function Subtitle({
   return (
     <h2
       className={cn(
-        "text-4xl md:text-6xl text-black font-cormorant font-bold mb-6 text-balance",
+        "text-4xl md:text-6xl text-own-black font-cormorant font-bold mb-6 text-balance",
         className
       )}
       {...props}

@@ -87,7 +87,7 @@ function NewsContent() {
           <CommentsForm newsId={data._id} path={slug} />
         ) : (
           <div className="flex">
-            <div className="bg-gray-100 p-4 rounded-md">
+            <div className="bg-own-extra-light-gray p-4 rounded-md">
               <Paragraph className="mt-0">
                 Debes iniciar sesión para comentar.
               </Paragraph>

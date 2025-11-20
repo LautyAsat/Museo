@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-own-black text-own-white py-10 px-10 mt-20">
+    <footer className="bg-black text-white py-10 px-10 mt-20">
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="col-span-1 md:col-span-2 flex flex-col gap-y-2 md:flex-row justify-start gap-x-8 text-3xl font-cormorant">
           <Link href="/" className=" block text-center">
@@ -29,7 +29,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="p-2 border-2 rounded-full border-gray-600"
             >
-              <FacebookIcon className="size-8 fill-own-white" />
+              <FacebookIcon className="size-8 fill-white" />
             </Link>
             <Link
               href="https://www.instagram.com/mphistorianatural/?hl=es"
@@ -37,12 +37,12 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="p-2 border-2 rounded-full border-gray-600"
             >
-              <InstagramIcon className="size-8 fill-own-white" />
+              <InstagramIcon className="size-8 fill-white" />
             </Link>
           </div>
         </div>
       </div>
-      <Paragraph className="mt-20 lg:text-xl text-center text-own-white">
+      <Paragraph className="mt-20 lg:text-xl text-center text-gray-500">
         © Todos los derechos reservados
       </Paragraph>
     </footer>

@@ -13,7 +13,7 @@ export default function NewsAside({ news }: { news: NewsItem[] }) {
         <Link
           key={item._id}
           href={`${createSlug(item.title, item._id)}`}
-          className="mt-10 flex flex-col cursor-pointer group overflow-hidden shadow-lg"
+          className="mt-10 flex flex-col cursor-pointer group overflow-hidden shadow-lg shadow-own-black"
         >
           <div>
             <div className="h-40 w-full overflow-hidden">
