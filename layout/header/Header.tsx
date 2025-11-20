@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import HamburgerIcon from "@/components/icons/HamburguerIcon";
 import HamburguerMenu from "./HamburgerMenu";
+import DarkModeIcon from "@/components/icons/DarkModeIcon";
 
 export default function Header() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
@@ -46,8 +47,10 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between py-6">
-          <div className="hidden md:block">
-            <LanguageSelector />
+          <div className="w-46 flex flex-start items-center">
+            <div className="hidden md:block bg-own-white p-2 rounded-md cursor-pointer">
+              <DarkModeIcon className="size-8" />
+            </div>
           </div>
 
           <div className="flex justify-between md:block text-center w-full">
