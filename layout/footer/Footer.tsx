@@ -11,9 +11,6 @@ export default function Footer() {
           <Link href="/" className=" block text-center">
             inicio
           </Link>
-          <Link href="/fosiles" className=" block text-center">
-            fosiles
-          </Link>
           <Link href="/colecciones" className=" block text-center">
             colecciones
           </Link>

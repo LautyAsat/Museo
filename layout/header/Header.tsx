@@ -105,15 +105,6 @@ export default function Header() {
           >
             Noticias
           </Link>
-
-          <div className="border-l border-white"></div>
-
-          <Link
-            href="/reservas"
-            className="relative after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-0.5 after:bg-own-white after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Reserva tu entrada
-          </Link>
         </nav>
       </header>
     </>
