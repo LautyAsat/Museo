@@ -24,7 +24,7 @@ export async function postComment(formData: FormData) {
 
   if(res.ok){
     revalidatePath(`${path}`);
-    return { success: true, message: "¡Comentario publicado!" };
+    return { success: true, message: "¡Su comentario fue enviado con éxito! Será evaluado." };
   }
   else{
     return { success: false, message: "Error al guardar." };

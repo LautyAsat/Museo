@@ -18,12 +18,10 @@ export default function CommentsForm({
       return;
     }
 
-    console.log("naaa no puede ser");
-
     const result = await postComment(formData);
 
     if (result?.success) {
-      toast.success("¡Comentario enviado con éxito!");
+      toast.success(result.message);
     } else {
       toast.error(result?.message || "Ocurrió un error inesperado");
     }
