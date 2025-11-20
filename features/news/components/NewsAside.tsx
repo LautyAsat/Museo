@@ -6,7 +6,7 @@ import { NewsItem } from "../types/newsItem";
 
 export default function NewsAside({ news }: { news: NewsItem[] }) {
   return (
-    <aside className="col-span-1">
+    <aside className="hidden md:block col-span-1">
       <h3 className="font-cormorant text-3xl">Otras Noticias</h3>
 
       {news.map((item) => (

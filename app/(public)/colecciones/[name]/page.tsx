@@ -26,7 +26,7 @@ export default function page() {
   });
 
   return (
-    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto my-20">
+    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto my-10 md:my-20">
       <Section className="grid grid-cols-1 xl:grid-cols-3 grid-rows-1 w-full gap-x-10 pt-0 mt-10">
         <div className="col-span-1 xl:col-span-2">
           <Subtitle>{data.name}</Subtitle>

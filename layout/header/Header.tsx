@@ -4,11 +4,11 @@ import Link from "next/link";
 import LanguageSelector from "./LanguageSelector";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import HamburgerIcon from "@/components/icons/HamburguerIcon";
 import HamburguerMenu from "./HamburgerMenu";
 
 export default function Header() {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
   const { user, logout } = useAuth();
@@ -36,7 +36,10 @@ export default function Header() {
 
   return (
     <>
-      <HamburguerMenu />
+      <HamburguerMenu
+        isOpen={isHamburgerOpen}
+        close={() => setIsHamburgerOpen(false)}
+      />
       <header
         className={`w-full px-4 md:px-10 bg-header text-white sticky z-50 top-0 left-0 transition-transform duration-500 ease-in-out ${
           hidden ? "-translate-y-full" : "translate-y-0"
@@ -48,7 +51,11 @@ export default function Header() {
           </div>
 
           <div className="flex justify-between md:block text-center w-full">
-            <button>
+            <button
+              onClick={(e) => {
+                setIsHamburgerOpen(!isHamburgerOpen);
+              }}
+            >
               <HamburgerIcon className="md:hidden size-8 fill-own-white" />
             </button>
             <h1 className={`text-3xl md:text-6xl font-cormorant font-bold`}>
@@ -73,7 +80,7 @@ export default function Header() {
           )}
         </div>
 
-        <div className="border-b border-white"></div>
+        <div className="hidden md:block border-b border-white"></div>
 
         <nav
           className={`hidden md:flex justify-center gap-6 py-3 text-base font-montserratv`}

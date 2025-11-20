@@ -14,7 +14,7 @@ export default function ExpandableCards({
   className?: string;
 }) {
   return (
-    <div className={cn("flex w-full", className)}>
+    <div className={cn("flex flex-col md:flex-row w-full", className)}>
       {items.map((item: AccordionItem) => {
         return (
           <figure

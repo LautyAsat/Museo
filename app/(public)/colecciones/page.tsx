@@ -11,12 +11,12 @@ import Link from "next/link";
 import { Suspense, useMemo, useState } from "react";
 
 const BENTO_ORDER = [
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-2 row-span-2",
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-2",
-  "col-span-2 row-span-2",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-2 md:row-span-2",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-1 md:row-span-2",
+  "md:col-span-2 md:row-span-2",
 ];
 
 interface filterType {
@@ -95,7 +95,7 @@ function CollectionsContent() {
         Resultados encontrados: {collectionsWithFossilsFiltered.length}
       </Paragraph>
 
-      <Section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 grid-rows-auto-[200px] grid-flow-dense">
+      <Section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-0 gap-6 mt-10 auto-rows-[400px] grid-flow-dense">
         {collectionsWithFossilsFiltered.map(
           (specie: SpecieWithType, index: number) => {
             const frontImage = specie.images.find((image) => image.isFront);
@@ -106,7 +106,7 @@ function CollectionsContent() {
                 href={`/colecciones/${specie.name}?type=${specie.type}`}
                 className={`${
                   BENTO_ORDER[index % BENTO_ORDER.length]
-                } relative cursor-pointer overflow-hidden`}
+                } relative cursor-pointer overflow-hidden block w-full`}
               >
                 <BentoCardImage
                   frontImage={frontImage?.url || "uploads/not-found.png"}

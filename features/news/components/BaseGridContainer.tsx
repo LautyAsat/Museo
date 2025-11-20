@@ -23,7 +23,7 @@ function BaseGridContent() {
   });
 
   return (
-    <div className="grid grid-cols-3 grid-rows-2 lg:max-h-[900px] 2xl:max-h-[1200px] gap-4 bg-background">
+    <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 lg:max-h-[900px] 2xl:max-h-[1200px] gap-4 bg-background">
       {query.data?.map((newsItem: NewsItem, index: number) => (
         <NewsCard
           key={index}
@@ -32,7 +32,9 @@ function BaseGridContent() {
           summary={newsItem.content}
           imageUrl={`http://localhost:3001/${newsItem.image}`}
           className={
-            index % 4 === 0 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
+            index % 4 === 0
+              ? "md:col-span-2 md:row-span-2"
+              : "md:col-span-1 md:row-span-1"
           }
           slug={createSlug(newsItem.title, newsItem._id)}
         />

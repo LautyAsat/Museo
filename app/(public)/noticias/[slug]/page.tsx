@@ -48,15 +48,15 @@ function NewsContent() {
   });
 
   return (
-    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto my-20">
+    <>
       <Subtitle>{data.title}</Subtitle>
       <Paragraph className="text-gray-500 xl:text-xl">
         Noticia subida el {formatDate(data.createAt)}
       </Paragraph>
       <Paragraph>{data.content}</Paragraph>
 
-      <Section className="grid grid-cols-4 grid-rows-1 w-full gap-x-10 pt-0 mt-10">
-        <div className="col-span-3">
+      <Section className="grid grid-cols-1 md:grid-cols-4 grid-rows-1 w-full gap-x-10 pt-0 mt-10">
+        <div className="col-span-1 md:col-span-3">
           <img
             src={`${BASE_API_URL}/${data.image}`}
             alt={data.title}
@@ -107,13 +107,13 @@ function NewsContent() {
           <Comments comments={data.comments} />
         </div>
       </Section>
-    </main>
+    </>
   );
 }
 
 export default function Page() {
   return (
-    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto my-20">
+    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto my-10 md:my-20">
       <Suspense
         fallback={
           <div className="h-screen flex items-center justify-center">

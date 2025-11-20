@@ -23,7 +23,7 @@ function AllNewsGridContent() {
   });
 
   return (
-    <div className="grid grid-cols-3 auto-rows-[24rem] gap-4 bg-background">
+    <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[24rem] gap-4 bg-background">
       {query.data?.map((newsItem: NewsItem, index: number) => (
         <NewsCard
           key={index}

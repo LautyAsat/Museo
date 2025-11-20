@@ -7,7 +7,7 @@ import BaseGridContainer from "@/features/news/components/BaseGridContainer";
 
 export default function page() {
   return (
-    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto my-20">
+    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto mt-10 md:my-20">
       <Subtitle className="text-own-black">#ATENCIÓN</Subtitle>
       <Paragraph>
         Lo último en noticias del museo{" "}

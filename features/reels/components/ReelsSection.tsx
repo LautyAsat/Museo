@@ -4,15 +4,18 @@ import Section from "@/components/Section";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function ReelsSection() {
+  const isMobile = useIsMobile();
+
   return (
     <Section className="mt-16 py-10">
       <div className="w-full h-16 bg-[url('/hash.svg')] bg-repeat-x bg-contain"></div>
       <div className="py-4">
         <Swiper
           spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={isMobile ? 1 : 3}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
           className="text-white"

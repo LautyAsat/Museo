@@ -23,10 +23,6 @@ export default function page() {
     },
   });
 
-  console.log(query.data);
-  console.log(`${API_ENDPOINTS.NEWS}/all`);
-  console.log(token);
-
   return (
     <div className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto py-20">
       <Subtitle className="font-cormorant text-5xl font-bold mb-4">
