@@ -14,8 +14,9 @@ import { formatDate } from "@/utils/utils";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function page() {
+function NewsContent() {
   const { slug }: { slug: string } = useParams();
   const { user } = useAuth();
   const id = slug.split("nid-")[1];
@@ -106,6 +107,22 @@ export default function page() {
           <Comments comments={data.comments} />
         </div>
       </Section>
+    </main>
+  );
+}
+
+export default function Page() {
+  return (
+    <main className="px-4 md:px-10 lg:px-20 2xl:px-0 max-w-[1440px] w-full mx-auto my-20">
+      <Suspense
+        fallback={
+          <div className="h-screen flex items-center justify-center">
+            Cargando noticia...
+          </div>
+        }
+      >
+        <NewsContent />
+      </Suspense>
     </main>
   );
 }

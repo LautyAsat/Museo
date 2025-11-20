@@ -12,7 +12,7 @@ export async function postComment(formData: FormData) {
   const cookieStore = await cookies();
   const token = cookieStore.get("session_token")?.value;
 
-  await fetch(`${API_ENDPOINTS.NEWS}/${newsId}/comments`, {
+  const res = await fetch(`${API_ENDPOINTS.NEWS}/${newsId}/comments`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,5 +21,13 @@ export async function postComment(formData: FormData) {
     body: JSON.stringify({ text }),
   });
 
-  revalidatePath(`${BASE_API_URL}${path}`);
+
+  if(res.ok){
+    revalidatePath(`${path}`);
+    return { success: true, message: "¡Comentario publicado!" };
+  }
+  else{
+    return { success: false, message: "Error al guardar." };
+  }
+
 }

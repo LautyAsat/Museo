@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ThemeContextProvider } from "@/providers/themeContext";
 import { LanguageContextProvider } from "@/providers/languageContext";
 import { AuthProvider } from "./AuthContext";
+import { Toaster } from "sonner";
 
 interface UserPayload {
   email: string;
@@ -24,6 +25,7 @@ export default function Providers({
     <QueryClientProvider client={queryClient}>
       <ThemeContextProvider>
         <AuthProvider initialUser={initialUser}>
+          <Toaster />
           <LanguageContextProvider>{children}</LanguageContextProvider>
         </AuthProvider>
       </ThemeContextProvider>

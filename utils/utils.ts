@@ -8,6 +8,10 @@ export function cn(...inputs: any[]) {
 export function formatDate(dateString: string): string {
     const date = new Date(dateString);
 
+    if (isNaN(date.getTime())) {
+      return "Fecha inválida";
+    }
+
     const formatted = new Intl.DateTimeFormat("es-AR", {
       weekday: "long",
       day: "numeric",
