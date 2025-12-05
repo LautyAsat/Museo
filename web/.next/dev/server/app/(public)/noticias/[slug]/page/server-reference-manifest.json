@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00f5bb9df8c19574bb9fb0d91ec9b9ab0b08ae7854": {
+      "workers": {
+        "app/(public)/noticias/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/noticias/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/(auth)/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/(public)/noticias/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logoutAction",
+          "filename": "app/(auth)/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(public)/noticias/[slug]/page": "action-browser"
+      },
+      "exportedName": "logoutAction",
+      "filename": "app/(auth)/login/actions.ts"
+    },
+    "407c50ae871c49cc6e1bd79867e0eb27acfb5c0c9d": {
+      "workers": {
+        "app/(public)/noticias/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/noticias/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/(auth)/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/(public)/noticias/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "postComment",
+          "filename": "app/(public)/noticias/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(public)/noticias/[slug]/page": "action-browser"
+      },
+      "exportedName": "postComment",
+      "filename": "app/(public)/noticias/actions.ts"
+    }
+  },
+  "edge": {}
+}

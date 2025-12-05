@@ -1,0 +1,52 @@
+"use client";
+
+import { Suspense } from "react";
+import { NewsItem } from "../types/newsItem";
+import NewsCard from "./NewsCard";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import NewsGridSkeleton from "./NewsGridSkeleton";
+import { createSlug, formatDate } from "@/utils/utils";
+import { API_ENDPOINTS, BASE_API_URL } from "@/utils/constants";
+
+const API_NEWS_URL = API_ENDPOINTS.TOP_NEWS;
+
+function BaseGridContent() {
+  const query = useSuspenseQuery({
+    queryKey: ["news"],
+    queryFn: async () => {
+      const response = await fetch(API_NEWS_URL);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    },
+  });
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 lg:max-h-[900px] 2xl:max-h-[1200px] gap-4 bg-background">
+      {query.data?.map((newsItem: NewsItem, index: number) => (
+        <NewsCard
+          key={index}
+          title={newsItem.title}
+          date={formatDate(newsItem.date)}
+          summary={newsItem.content}
+          imageUrl={`${BASE_API_URL}/${newsItem.image}`}
+          className={
+            index % 4 === 0
+              ? "md:col-span-2 md:row-span-2"
+              : "md:col-span-1 md:row-span-1"
+          }
+          slug={createSlug(newsItem.title, newsItem._id)}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default function BaseGridContainer() {
+  return (
+    <Suspense fallback={<NewsGridSkeleton />}>
+      <BaseGridContent />
+    </Suspense>
+  );
+}

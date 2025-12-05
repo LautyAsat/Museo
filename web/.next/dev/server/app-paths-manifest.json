@@ -1,0 +1,9 @@
+{
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/registro/page": "app/(auth)/registro/page.js",
+  "/(public)/colecciones/[name]/page": "app/(public)/colecciones/[name]/page.js",
+  "/(public)/colecciones/page": "app/(public)/colecciones/page.js",
+  "/(public)/noticias/[slug]/page": "app/(public)/noticias/[slug]/page.js",
+  "/(public)/noticias/page": "app/(public)/noticias/page.js",
+  "/(public)/page": "app/(public)/page.js"
+}

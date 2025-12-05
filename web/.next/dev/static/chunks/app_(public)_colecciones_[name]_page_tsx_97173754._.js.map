@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/lautaro/Facultad/museo/app/%28public%29/colecciones/%5Bname%5D/page.tsx"],"sourcesContent":["\"use client\";\n\nimport { useParams } from \"next/navigation\";\n\nexport default function page() {\n  const { name }: { name: string } = useParams();\n  const searchParams = useSearchParams();\n  const decodedName = decodeURIComponent(name);\n\n  console.log(\"el nombre es: \", decodedName);\n  return <div>Specie Detail Page</div>;\n}\n"],"names":[],"mappings":";;;;;AAEA;;;AAFA;;AAIe,SAAS;;IACtB,MAAM,EAAE,IAAI,EAAE,GAAqB,IAAA,mTAAS;IAC5C,MAAM,eAAe;IACrB,MAAM,cAAc,mBAAmB;IAEvC,QAAQ,GAAG,CAAC,kBAAkB;IAC9B,qBAAO,8VAAC;kBAAI;;;;;;AACd;GAPwB;;QACa,mTAAS","debugId":null}}]
+}

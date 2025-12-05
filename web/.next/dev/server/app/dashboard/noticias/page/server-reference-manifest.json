@@ -1,0 +1,50 @@
+{
+  "node": {
+    "00f5bb9df8c19574bb9fb0d91ec9b9ab0b08ae7854": {
+      "workers": {
+        "app/dashboard/noticias/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/noticias/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/(auth)/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logoutAction",
+          "filename": "app/(auth)/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/noticias/page": "action-browser"
+      },
+      "exportedName": "logoutAction",
+      "filename": "app/(auth)/login/actions.ts"
+    },
+    "003044a551f3eaa060d9821742a1d765b6e88ed4f9": {
+      "workers": {
+        "app/dashboard/noticias/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/noticias/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/(auth)/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllNews",
+          "filename": "app/dashboard/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/noticias/page": "action-browser"
+      },
+      "exportedName": "getAllNews",
+      "filename": "app/dashboard/actions.ts"
+    },
+    "70c961975d7d46f09790cb14ea9a628c9eb36d41ae": {
+      "workers": {
+        "app/dashboard/noticias/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/noticias/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/(auth)/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "toggleCommentApproval",
+          "filename": "app/dashboard/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/noticias/page": "action-browser"
+      },
+      "exportedName": "toggleCommentApproval",
+      "filename": "app/dashboard/actions.ts"
+    }
+  },
+  "edge": {}
+}

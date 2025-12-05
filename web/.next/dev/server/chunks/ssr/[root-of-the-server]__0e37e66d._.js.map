@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///home/lautaro/Facultad/museo/app/dashboard/page.tsx"],"sourcesContent":["export default function Dashboard() {\n  return (\n    <div className=\"p-4\">\n      <h1 className=\"font-cormorant text-5xl font-bold mb-4\">Dashboard</h1>\n      <p>Bienvenido al dashboard rey</p>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,+YAAC;QAAI,WAAU;;0BACb,+YAAC;gBAAG,WAAU;0BAAyC;;;;;;0BACvD,+YAAC;0BAAE;;;;;;;;;;;;AAGT","debugId":null}}]
+}
